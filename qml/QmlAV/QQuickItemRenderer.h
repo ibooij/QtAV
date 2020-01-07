@@ -23,13 +23,14 @@
 #ifndef QTAV_QML_QQUICKRENDERER_H
 #define QTAV_QML_QQUICKRENDERER_H
 
+#include "Export.h"
 #include <QtAV/VideoRenderer.h>
 #include <QtQuick/QQuickItem>
 #include <QmlAV/QuickFilter.h>
 
 namespace QtAV {
 class QQuickItemRendererPrivate;
-class QQuickItemRenderer : public QQuickItem, public VideoRenderer
+class QMLAV_EXPORT QQuickItemRenderer : public QQuickItem, public VideoRenderer
 {
     Q_OBJECT
     Q_DISABLE_COPY(QQuickItemRenderer)
