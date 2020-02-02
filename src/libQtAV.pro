@@ -344,7 +344,7 @@ config_vda {
     SOURCES += codec/video/VideoDecoderVDA.cpp
     LIBS += -framework VideoDecodeAcceleration
 }
-config_videotoolbox {
+macx {
   DEFINES *= QTAV_HAVE_VIDEOTOOLBOX=1
   SOURCES *= codec/video/VideoDecoderVideoToolbox.cpp
   LIBS += -framework CoreMedia -framework VideoToolbox

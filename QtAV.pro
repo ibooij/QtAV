@@ -2,6 +2,9 @@ include(root.pri)
 
 TEMPLATE = subdirs
 CONFIG -= ordered
+macx {
+CONFIG += videotoolbox
+}
 SUBDIRS = libqtav tools
 libqtav.file = src/libQtAV.pro
 !no-widgets {
@@ -34,9 +37,9 @@ OTHER_FILES += \
 	templates/derived.h templates/derived.cpp templates/derived_p.h \
 	templates/final.h templates/final.cpp
 #OTHER_FILES += config.test/mktest.sh
-EssentialDepends = avutil avcodec avformat swscale
+EssentialDepends = avutil avcodec avformat swscale 
 winrt: CONFIG *= no-avdevice no-openal no-portaudio no-dsound no-gdiplus
-OptionalDepends = swresample avresample
+OptionalDepends = swresample avresample 
 !no-avfilter: OptionalDepends *= avfilter
 !no-avdevice: OptionalDepends *= avdevice
 # QtOpenGL module. In Qt5 we can disable it and still have opengl support
